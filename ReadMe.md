@@ -5,7 +5,7 @@ This is a Python toolkit designed to optimize AI/ML workflows by leveraging lear
 <br>Input is welcomed and greatly encouraged.
 
 
-## 🚀 Features
+## Features
 
 - **Lazy Loading of Heavy Libraries:**  
   Dynamically loads AI/ML libraries (e.g., TensorFlow, PyTorch, scikit-learn, Transformers, NumPy, Pandas, Matplotlib, OpenCV) only when they are actually used, minimizing startup time and memory footprint.
@@ -26,7 +26,7 @@ This is a Python toolkit designed to optimize AI/ML workflows by leveraging lear
   Step-by-step instructions for containerizing your AI/ML application using Docker and Docker Compose.
 
 
-## 🧑‍💻 Usage
+## Usage
 
 ### 1. Lazy Loading in Your Project
 
@@ -60,7 +60,7 @@ odipie.force_load_all()
 
 ---
 
-## 📖 Documentation
+## Documentation
 
 - **[Guide_LzyL-AI.md](Guide_LzyL-AI.md):**  
   Comprehensive explanation of lazy loading, its benefits for AI/ML, and technical implementation details.
@@ -88,12 +88,12 @@ Contributions are welcome! Please open issues or submit pull requests to help im
 
 ---
 
-## 💡 Security Note
+## Security Note
 
 Never use `import *` in your code or in `__init__.py` files. Always explicitly import only the modules you need. See [docker-setup.md](docker-setup.md) for more security best practices.
 
 ---
 
-## 📬 Contact
+## Contact
 
 For questions or suggestions, please open an issue in this repository.
