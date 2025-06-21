@@ -139,6 +139,7 @@ Visit your app at: [http://localhost:5000](http://localhost:5000)
 
 - `PYTHONDONTWRITEBYTECODE=1`: Prevents `.pyc` files for a cleaner container.
 - `PYTHONUNBUFFERED=1`: Ensures real-time logging to stdout/stderr.
-- You can later swap Flask’s development server with Gunicorn for production.
+- You can later swap Flask’s development server with your choice for production.
+- Entry points, security, and project buildouts are still under works.
 
 ---

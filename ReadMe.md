@@ -8,8 +8,33 @@ This is a Python toolkit designed to optimize AI/ML workflows by leveraging lear
 ## Features
 
 - **Lazy Loading of Heavy Libraries:**  
-  Dynamically loads AI/ML libraries (e.g., TensorFlow, PyTorch, scikit-learn, Transformers, NumPy, Pandas, Matplotlib, OpenCV) only when they are actually used, minimizing startup time and memory footprint.
+  Efficiency in loading AI/ML libraries (e.g., TensorFlow, PyTorch, scikit-learn, Transformers, NumPy, Pandas, Matplotlib, OpenCV) only when they are actually used, minimizing startup time and memory footprint.
 
+- **File Structure:**
+  Project file tree for learns to keep things organized:
+```  
+  ai_project/
+├── app/
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── templates/
+│   ├── static/
+│   └── models/
+├── notebooks/
+├── data/
+├── scripts/
+├── tests/
+├── config.py
+├── requirements.txt
+├── app.py
+├── docker/
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── entrypoint.sh
+│   └── README.md
+├── docker-compose.yml
+└── README.md
+```
 - **Transparent API:**  
   Access libraries and utility functions as if they were eagerly imported, with no change to your code’s interface.
 
