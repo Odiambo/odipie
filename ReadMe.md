@@ -7,10 +7,14 @@ This is a Python toolkit designed to optimize AI/ML workflows by leveraging lear
 
 ## Features
 
+- **Advance PRompt Guide:**</br>
+  Prompt simplified look at advanced propmting with context promting approaches. API and interface propmting are adressesed. 
+  It is important to understand the model you are using, its ability to parse data, properly interpret context, and map chains of thought and actions.
+
 - **Lazy Loading of Heavy Libraries:**  
   Efficiency in loading AI/ML libraries (e.g., TensorFlow, PyTorch, scikit-learn, Transformers, NumPy, Pandas, Matplotlib, OpenCV) only when they are actually used, minimizing startup time and memory footprint.
 
-- **File Structure:**
+- **File Structure:**</br>
   Project file tree for learns to keep things organized:
 ```  
   ai_project/
@@ -49,6 +53,10 @@ This is a Python toolkit designed to optimize AI/ML workflows by leveraging lear
 
 - **Docker Integration Guide:**  
   Step-by-step instructions for containerizing your AI/ML application using Docker and Docker Compose.
+
+- **MCP Use and Set Up:**</br>
+  >TBA
+
 
 
 ## Usage
