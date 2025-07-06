@@ -7,7 +7,7 @@ This is a Python toolkit designed to optimize AI/ML workflows by leveraging lear
 
 ## Features
 
-- **Advance PRompt Guide:**</br>
+- **Advance Prompt Guide:**</br>
   Prompt simplified look at advanced propmting with context promting approaches. API and interface propmting are adressesed. 
   It is important to understand the model you are using, its ability to parse data, properly interpret context, and map chains of thought and actions.
 
