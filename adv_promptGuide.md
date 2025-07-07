@@ -4,7 +4,7 @@
 
 Before diving into prompting strategies, it's important to understand the relationship between prompt design and the context in which a language model is accessed. The format and structure of the output are highly dependent on two factors: the output configuration and the method of access.
  '
- 
+
 ### Output Configuration
 
 Output configuration governs the expected format of a model’s response. This can include:
@@ -326,4 +326,5 @@ This quick guide provides insights into advanced prompt engineering, output stra
 
 This document is still growing and works as a base for educational presentations on effective prompting and interacting with AI tools.
 
-> V 2.10.1
+> Resources include direct experinece and experimentation; client experience; and primary references from Meta, OpenAI, Anthropic, and IBM.
+#### V 2.10.1
