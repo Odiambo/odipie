@@ -326,5 +326,4 @@ This quick guide provides insights into advanced prompt engineering, output stra
 
 This document is still growing and works as a base for educational presentations on effective prompting and interacting with AI tools.
 
-> Resources include direct experinece and experimentation; client experience; and primary references from Meta, OpenAI, Anthropic, and IBM.
-#### V 2.10.1
+> Resources include direct experinece and experimentation; client experience; and primary references from Meta, OpenAI, Anthropic, and IBM.#### V 2.10.1
