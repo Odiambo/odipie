@@ -1,9 +1,10 @@
-# Quick Guide on Prompt Engineering
+# 📦Odiambo Guide on Prompt Engineering
 
 ## Understanding Output Configuration and Model Interfaces
 
 Before diving into prompting strategies, it's important to understand the relationship between prompt design and the context in which a language model is accessed. The format and structure of the output are highly dependent on two factors: the output configuration and the method of access.
-
+ '
+ 
 ### Output Configuration
 
 Output configuration governs the expected format of a model’s response. This can include:
