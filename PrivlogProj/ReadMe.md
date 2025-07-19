@@ -62,7 +62,7 @@ This project implements a modular, end-to-end encrypted logging system with:
 - Privacy-preserving logging for cloud-native services
 - Red team environments that must maintain operational secrecy
 
-  ### 📡 API Reference
+### API Reference
 
 The FastAPI backend exposes the following endpoints:
 
