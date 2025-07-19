@@ -14,6 +14,10 @@ This is a Python toolkit designed to optimize AI/ML workflows by leveraging lear
 - **Lazy Loading of Heavy Libraries:**  
   Efficiency in loading AI/ML libraries (e.g., TensorFlow, PyTorch, scikit-learn, Transformers, NumPy, Pandas, Matplotlib, OpenCV) only when they are actually used, minimizing startup time and memory footprint.
 
+- **Zero-trust Looging Processor:**</br>
+  Privacy focused logging processor with redaction, real-time dashboard integration, and encryption. 
+  A owrking project in a separate repo is focused on data manipulation of encrypted data. 
+
 - **File Structure:**</br>
   Project file tree for learns to keep things organized:
 ```  
