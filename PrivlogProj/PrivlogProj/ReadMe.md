@@ -97,7 +97,7 @@ To get started quickly with the full system using Docker Compose:
 
 ```bash
 # 1. Clone the repository
-$ git clone https://github.com/your-org/privacy-log-processor.git
+$ git clone https://github.com/Odiambo/....git # We will be detaching this project and making it a deicated repo.
 $ cd privacy-log-processor
 
 # 2. Build and start the services
