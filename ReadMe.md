@@ -5,6 +5,8 @@ This is a Python toolkit designed to optimize AI/ML workflows by leveraging lear
 <br>Input is welcomed and greatly encouraged.
 
 
+
+
 ## Features
 
 - **Advance Prompt Guide:**</br>
@@ -15,7 +17,7 @@ This is a Python toolkit designed to optimize AI/ML workflows by leveraging lear
   Efficiency in loading AI/ML libraries (e.g., TensorFlow, PyTorch, scikit-learn, Transformers, NumPy, Pandas, Matplotlib, OpenCV) only when they are actually used, minimizing startup time and memory footprint.
 
 - **File Structure:**</br>
-  Project file tree for learns to keep things organized:
+  Project file tree tohelp new learners to keep things organized:
 ```  
   ai_project/
 ├── app/
@@ -60,8 +62,19 @@ This is a Python toolkit designed to optimize AI/ML workflows by leveraging lear
 
 
 ## Usage
+Have the habit of updating your general environment and checking your inventory for required packages/libraries and dependencies. 
+### Envirnment
+Set up a virtural environment for the project.</br>
+Here, we will set up a basic python venv ```python3 -m venv myprojv```. This will create an isolated project directory named ```myprojv```. 
 
-### 1. Lazy Loading in Your Project
+ To use the isolatioin, you will activate the environment: ```source myprojv/bin/activate```
+
+ Let;s take a peek under the hood so that things are understood. 
+ - ```python3``` is calling the Py interpreter. Keep this in mind every time you use this command.
+ - ```-m venv``` This instructs python to run the venv module. This module will create the envirnoment.
+ - ```myprojv``` is the name of the evironment you are creating. You can name the envirnment anything. Try to standardize and simplify your naming convention. 
+*************************************************************************************
+### Lazy Loading in Your Project
 
 Import libraries and functions from `lazy_init_py.py` as you would from a normal package:
 
@@ -81,7 +94,7 @@ processed = odipie.preprocess_data(data)
 trained = odipie.train_model(X, y)
 ```
 
-### 2. Inspect and Control Lazy Loading
+#### Inspect and Control Lazy Loading
 
 ```python
 # See which modules have been loaded so far
