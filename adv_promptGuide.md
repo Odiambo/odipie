@@ -1,9 +1,18 @@
 # 📦Odiambo Guide on Prompt Engineering
 
+General Anatomy of a fully contextualized prompt:
+- Role
+- Task
+- Context
+- Resoning
+- Output Format
+- Stop Conditions (compliance with prompt requirements or error loops)
+
+
 ## Understanding Output Configuration and Model Interfaces
 
 Before diving into prompting strategies, it's important to understand the relationship between prompt design and the context in which a language model is accessed. The format and structure of the output are highly dependent on two factors: the output configuration and the method of access.
- '
+
 
 ### Output Configuration
 
@@ -65,6 +74,7 @@ Prompting through APIs offers direct access to LLM inference engines. You can:
 ---
 
 ## Prompt Engineering Techniques
+I'm being nice calling this 'engineering'. You are jsut talking to the model or agent. Like speaking to a reasonably intelligent human, you want to ask questions and give task using complete thoughts an understandable venacular.
 
 ### Step-back Prompting
 
