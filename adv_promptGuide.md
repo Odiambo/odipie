@@ -1,12 +1,12 @@
 # 📦Odiambo Guide on Prompt Engineering
 
-General Anatomy of a fully contextualized prompt:
-- Role
-- Task
-- Context
-- Resoning
-- Output Format
-- Stop Conditions (compliance with prompt requirements or error loops)
+**General Anatomy of a fully contextualized prompt:**
+- <span style="color:yellow">Role</span>
+- <span style="color:yellow">Task</span>
+- <span style="color:yellow">Context
+- <span style="color:yellow">Resoning
+- <span style="color:yellow">Output Format
+- <span style="color:yellow">Stop Conditions</span> (compliance with prompt requirements or error loops)
 
 
 ## Understanding Output Configuration and Model Interfaces
