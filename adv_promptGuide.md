@@ -36,11 +36,11 @@ Web interfaces like **Perplexity AI** or **Manus** offer interactive experiences
 * Can rely on RAG (retrieval-augmented generation) and plugins.
 * Return results tailored for readability, not structured parsing.
 
-**Limitation**: You have minimal control over inference parameters, and responses are often not programmatically structured.
+**Limitation**: I general models you have minimal control over inference parameters, and responses are often not programmatically structured.
 
 #### 2. Prompting via APIs (e.g., OpenAI, Anthropic)
 
-Prompting through APIs offers direct access to LLM inference engines. You can:
+Prompting through APIs offers direct access to LLM inference engines and control of your progammatic abilities. You can:
 
 * Set precise generation parameters (e.g., temperature, stop tokens).
 * Programmatically enforce response formats (e.g., JSON, YAML).
@@ -336,4 +336,4 @@ This quick guide provides insights into advanced prompt engineering, output stra
 
 This document is still growing and works as a base for educational presentations on effective prompting and interacting with AI tools.
 
-> Resources include direct experinece and experimentation; client experience; and primary references from Meta, OpenAI, Anthropic, and IBM.#### V 2.10.1
+> Resources include direct experinece and experimentation; client experience; and primary references from Meta, OpenAI, Anthropic, and IBM. #### V 2.12.0
