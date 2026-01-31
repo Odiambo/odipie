@@ -1,5 +1,21 @@
 # Odipie
+<div align="center">
 
+# 🥧 Odipie
+### *Fast AI/ML Workflows Through Intelligent Lazy Loading*
+
+[![Python Version](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/Odiambo/odipie?style=social)](https://github.com/Odiambo/odipie/stargazers)
+[![Forks](https://img.shields.io/github/forks/Odiambo/odipie?style=social)](https://github.com/Odiambo/odipie/network/members)
+[![Issues](https://img.shields.io/github/issues/Odiambo/odipie)](https://github.com/Odiambo/odipie/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Odiambo/odipie/pulls)
+[![Template](https://img.shields.io/badge/repo-template-blueviolet)](https://github.com/Odiambo/odipie/generate)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
+<img src="https://raw.githubusercontent.com/Odiambo/odipie/chef/assets/odipie-demo.gif" width="600" alt="Odipie Demo"/>
+
+**Reduce ML startup time by 70% • Cut memory usage by 50% • Zero code changes required**
+</div>
 This is a Python toolkit designed to optimize AI/ML workflows by leveraging learned and discovered techniques for heavy dependencies. This repository works as a resource for building efficient, modular, and scalable AI/ML applications, with a focus on fast startup times, reduced memory usage, and integration suggestions.
 
 <br>Input is welcomed and greatly encouraged.
