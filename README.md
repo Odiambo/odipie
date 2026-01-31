@@ -1,4 +1,3 @@
-# Odipie
 <div align="center">
 
 # 🥧 Odipie
@@ -26,6 +25,8 @@ This is a Python toolkit designed to optimize AI/ML workflows by leveraging lear
 - **Advance Prompt Guide:**</br>
   Prompt simplified look at advanced propmting with context promting approaches. API and interface propmting are adressesed. 
   It is important to understand the model you are using, its ability to parse data, properly interpret context, and map chains of thought and actions.
+  **[📖 Read the Guide](adv_promptGuide.md)**
+
 
 - **Lazy Loading of Heavy Libraries:**  
   Efficiency in loading AI/ML libraries (e.g., TensorFlow, PyTorch, scikit-learn, Transformers, NumPy, Pandas, Matplotlib, OpenCV) only when they are actually used, minimizing startup time and memory footprint.
@@ -111,12 +112,15 @@ odipie.force_load_all()
 
 ## Documentation
 
-- **[Guide_LzyL-AI.md](Guide_LzyL-AI.md):**  
-  Comprehensive explanation of lazy loading, its benefits for AI/ML, and technical implementation details.
-
-- **[docker-setup.md](docker-setup.md):**  
-  Step-by-step guide for Dockerizing a Flask-based AI/ML project, including best practices for Python environments.
-
+| Resource | Description | Link |
+|----------|-------------|------|
+| **📘 Wiki Home** | Complete knowledge base | [🔗 Wiki](https://github.com/Odiambo/odipie/wiki) |
+| **🎓 Tutorials** | Step-by-step guides | [🔗 Tutorials](https://github.com/Odiambo/odipie/wiki/Tutorials) |
+| **📚 API Reference** | Full API documentation | [🔗 API Docs](https://github.com/Odiambo/odipie/wiki/API-Reference) |
+| **🐳 Docker Guide** | Step-by-step guide for Dockerizing a Flask-based AI/ML project, including best practices for Python environments | [🔗 Docker Setup](docker-setup.md) |
+| **🧠 Lazy Loading Deep Dive** | omprehensive explanation of lazy loading, its benefits for AI/ML, and technical implementation details | [🔗 Guide](Guide_LzyL-AI.md) |
+| **💬 Prompt Engineering** | Advanced AI prompting | [🔗 Prompt Guide](adv_promptGuide.md) |
+| **🏗️ Project Structure** | Best practices for ML projects | [🔗 Structure Guide](https://github.com/Odiambo/odipie/wiki/Project-Structure) |
 ---
 
 ## 🐳 Docker Support
@@ -133,7 +137,18 @@ This project is licensed under the [Apache License 2.0](LICENSE).
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please open issues or submit pull requests to help improve odipie.
+
+We love contributors! 💖
+
+### Ways to Contribute:
+- 🐛 **Report bugs** via [Issues](https://github.com/Odiambo/odipie/issues)
+- 💡 **Suggest features** in [Discussions](https://github.com/Odiambo/odipie/discussions)
+- 📝 **Improve documentation** (especially Wiki!)
+- 🧪 **Add examples** for your favorite frameworks
+- 🎨 **Enhance code quality** with PRs
+
+**[📖 Contribution Guidelines](CONTRIBUTING.md)** 
+
 
 ---
 
@@ -142,7 +157,15 @@ Contributions are welcome! Please open issues or submit pull requests to help im
 Never use `import *` in your code or in `__init__.py` files. Always explicitly import only the modules you need. See [docker-setup.md](docker-setup.md) for more security best practices.
 
 ---
-
-## Contact
-
+<div align="center">
+<h2>Contact</h2>
 For questions or suggestions, please open an issue in this repository.
+div align="center">
+
+**[⬆ Back to Top](#-odipie)**
+
+Made with ❤️ by [Odiambo](https://github.com/Odiambo)
+
+If Odipie saved you time, consider giving it a ⭐!
+
+</div>
