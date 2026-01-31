@@ -15,7 +15,8 @@ _LAZY_MODULES = {
     'transformers': 'transformers',
     'numpy': 'numpy',
     'pandas': 'pandas',
-    'matplotlib': 'matplotlib.pyplot',
+    'matplotlib': 'matplotlib',
+    'plt': 'matplotlib.pyplot',
     'cv2': 'cv2'
 }
 
