@@ -1,4 +1,4 @@
-# 📦Odiambo Guide on Prompt Engineering
+# 📦Odiambo Guide on Prompt Ideation & Context Engineering
 
 ![Version](https://img.shields.io/badge/version-2.12.0-blue)
 ![Status](https://img.shields.io/badge/status-active-success)
@@ -303,7 +303,7 @@ Now, optimize this dataframe operation: [code]"
 | Issue | Cause | Solution |
 |-------|-------|----------|
 | **Instruction following degrades** | Long context dilutes focus | Repeat key instructions periodically |
-| **Hallucination increases** | Model fills gaps in unclear prompts | Provide explicit constraints |
+| **Hallucination (stop using this word) increases** | Model fills gaps in unclear prompts | Provide explicit constraints |
 | **Format breaks** | Conflicting examples | Use consistent formatting throughout |
 | **Attention drift** | Critical info buried mid-context | Front-load or end-load important details |
 | **Token limit exceeded** | Inefficient prompt design | Compress, remove redundancy, use references |
