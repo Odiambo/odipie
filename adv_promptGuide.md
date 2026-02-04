@@ -48,6 +48,10 @@ Prompting through APIs offers direct access to LLM inference engines and control
 
 **Advantage**: This level of control is crucial for applications like data extraction, report generation, or interacting with other systems programmatically.
 
+> System prompt -> Assign a role or characteristic to the model/agent
+
+> User prompt -> Apply the user's context, objectives, tasks, and constraints
+
 **Example - OpenAI API Prompt:**
 
 ```json
