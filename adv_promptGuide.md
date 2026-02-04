@@ -86,8 +86,14 @@ Prompting through APIs offers direct access to LLM inference engines and control
 
 ---
 
-<h2 style="color: #FF8C00;">Prompt Engineering Techniques</h2>
-I'm being nice calling this 'engineering'. You are jsut talking to the model or agent. Like speaking to a reasonably intelligent human, you want to ask questions and give task using complete thoughts an understandable venacular.
+## 🟠 Prompt Engineering Techniques
+I'm being nice calling this 'engineering'. You are just talking to the model or agent. Like speaking to a reasonably intelligent human, you want to ask questions and give task using complete thoughts an understandable venacular. This is where the idea of context engineering comes in. 
+
+All software requires context, so there is nothing new here except this software can recipicate (be trained and act) through execution.
+
+To set a baseline I want to start with an overview of how models process prompts. 
+
+🔹You can skip the processing info if it sounds crazy to understand how things work. 
 
 ---
 
@@ -324,7 +330,7 @@ Then proceed with the task."
 This meta-prompting technique helps verify the model's interpretation of your instructions.
 
 ---
-
+Let's look at the general type of prompts used. This information can be applied rigth away.
 
 ### Step-back Prompting
 
