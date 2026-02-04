@@ -1,13 +1,18 @@
+<div align="center">
+  
 # 📦Odiambo Guide on Prompt Ideation & Context Engineering
+
+</div>
 
 ![Version](https://img.shields.io/badge/version-2.12.0-blue)
 ![Status](https://img.shields.io/badge/status-active-success)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Prompt Engineering](https://img.shields.io/badge/prompt-engineering-purple)
+![Prompt Engineering](https://img.shields.io/badge/prompt-ideation-purple)
+![Context Engineering](https://img.shields.io/badge/context-engineering-orange)
 ![AI](https://img.shields.io/badge/AI-LLM-orange)
 ![JSON](https://img.shields.io/badge/format-markdown-yellow)
 ![Documentation](https://img.shields.io/badge/type-guide-informational)
-![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen)
+
 
 **General Anatomy of a fully contextualized prompt:**
 - <span style="color:yellow">Role</span>
@@ -506,7 +511,7 @@ Test 2 prioritization models against historical data and recommend implementatio
 **Success Metrics**: Adoption prediction accuracy, feasibility-demand balance score, resource allocation efficiency.
  
 
-## JSON in Prompt Engineering
+## JSON in Prompting
 JSON prompt engineering involves structuring prompts in a way that guides the model to return outputs in valid JSON format. This is critical in machine-to-machine interactions, software automation, and modern AI-driven applications that require predictable and readable output.
 
 When LLMs are integrated into applications, especially through APIs, the ability to return structured data is non-negotiable. Prompting a model to return a well-formed JSON object allows downstream processes (like UI rendering, database inserts, or automated pipelines) to consume outputs directly without additional parsing or correction. This ensures reliability, reduces post-processing, and increases security in automated flows.
@@ -593,3 +598,5 @@ This quick guide provides insights into advanced prompt engineering, output stra
 This document is still growing and works as a base for educational presentations on effective prompting and interacting with AI tools.
 
 > Resources include direct experinece and experimentation; client experience; and primary references from Meta, OpenAI, Anthropic, and IBM. #### V 2.12.0
+
+![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen)
