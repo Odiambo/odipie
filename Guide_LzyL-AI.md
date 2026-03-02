@@ -2,6 +2,31 @@
 
 Lazy loading is a powerful optimization technique that can dramatically improve the performance and user experience of Python applications, especially those dealing with heavy AI/ML libraries. This guide explores the core benefits of lazy loading and demonstrates how to implement it effectively.
 
+## Why Odipie?
+
+<table>
+<tr>
+<td width="33%" align="center">
+
+### ⚡ **Instant Startup**
+From 15s → 0.5s launch time
+
+</td>
+<td width="33%" align="center">
+
+### 🧠 **Memory Efficient**
+Load only what you use, when you use it
+
+</td>
+<td width="33%" align="center">
+
+### 🔌 **Zero Friction**
+Drop-in replacement for standard imports
+
+</td>
+</tr>
+</table>
+
 
 ## Why Lazy Loading Matters
 
@@ -249,7 +274,39 @@ def force_load_all():
 2. **Test thoroughly**: Ensure lazy-loaded modules work identically to eager imports
 3. **Document behavior**: Make it clear to users which modules are lazy-loaded
 4. **Provide utilities**: Include functions to check loading status and warm up modules
+## 💡 Examples
 
+### Example 1: Image Classification API
+```python
+import lazy_init_py as odipie
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/classify', methods=['POST'])
+def classify():
+    # TensorFlow loads only on first request!
+    model = odipie.load_model('classifier.h5')
+    img = odipie.preprocess_data(request.files['image'])
+    return {'prediction': model.predict(img).tolist()}
+```
+
+### Example 2: Multi-Model Inference
+```python
+import lazy_init_py as odipie
+
+# Use different frameworks in same script - load on demand
+def classify_text(text):
+    # Loads transformers only if needed
+    return odipie.transformers.pipeline('sentiment-analysis')(text)
+
+def classify_image(img):
+    # Loads TensorFlow only if needed  
+    model = odipie.tensorflow.keras.models.load_model('img_model.h5')
+    return model.predict(img)
+```
+
+**[📁 View 10+ More Examples](https://github.com/Odiambo/odipie/tree/chef/tba)** resetting as of 20Jan26.
 ## Conclusion
 
 Lazy loading transforms heavy Python applications from resource-hungry programs into responsive, efficient tools. The implementation, here, demonstrates how a well-designed lazy loading system can result in performance improvements while maintaining a simple, transparent API.
