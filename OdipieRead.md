@@ -63,7 +63,7 @@ This is a Python toolkit designed to optimize AI/ML workflows by leveraging lear
 
 ## Usage
 Have the habit of updating your general environment and checking your inventory for required packages/libraries and dependencies. 
-### Envirnment
+### Environment
 Set up a virtural environment for the project.</br>
 Here, we will set up a basic python venv ```python3 -m venv myprojv```. This will create an isolated project directory named ```myprojv```. 
 

@@ -4,7 +4,7 @@
 - <span style="color:yellow">Role</span>
 - <span style="color:yellow">Task</span>
 - <span style="color:yellow">Context
-- <span style="color:yellow">Resoning
+- <span style="color:yellow">Reasoning
 - <span style="color:yellow">Output Format
 - <span style="color:yellow">Stop Conditions</span> (compliance with prompt requirements or error loops)
 
