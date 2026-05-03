@@ -28,6 +28,15 @@
 
 Before diving into prompting strategies, it's important to understand the relationship between prompt design and the context in which a language model is accessed. The format and structure of the output are highly dependent on two factors: the output configuration and the method of access.
 
+**Prompting Update: Mitigating Lost In The Middle Effect.**
+
+- Context Priming 
+- Recency Anchoring
+- Top-Heavy Ranking
+- Chain-of-Verification (CoVe)
+
+This guide outlines advanced prompting stratgies to [Mitigate Lost-in-the-Middle Context](https://github.com/Odiambo/odipie/wiki/Advanced-Prompt-Engineering-Wiki#contexting-context-prompting) to maximize the performance of LLMs when working with massive datasets or a corpus of material. 
+
 
 ### Output Configuration
 
