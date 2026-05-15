@@ -43,7 +43,7 @@ Antigravity is available for Windows, Linux, and macOS.
 
 ### Prerequisites
 *   **Google Chrome**: Required for browser integration features.
-*   **Google Account**: A personal Gmail account is currently required for the public preview.
+*   **Google Account**: Antigravity is currently available for personal Google accounts in approved geographies. A personal Gmail account is recommended, and Workspace accounts may not authenticate reliably.
 
 ### Windows Installation
 1.  **Download**: Visit the [Official Antigravity Website] and download the Windows installer (`.exe`).
@@ -112,7 +112,7 @@ If you need to keep Enforce mode active, you can update the profile to allow the
 
 # Antigravity Update Workflow
 
-## Overview of the agent's automate Update Process.
+## Overview of the agent's automated Update Process.
 AGY will open a background terminal and resolve the update. Users can open the background terminal to view the process. 
 
 Here, I show the high level steps that agy is taking to resolve an update in an Ubuntu environment. 
