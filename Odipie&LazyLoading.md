@@ -426,6 +426,6 @@ class FastMLService:
 
 - [Odipie Technical Guide](Guide_LzyL-AI.md)
 - [Docker Setup for Odipie](https://github.com/Odiambo/odipie/blob/chef/docker-setup.md)
-- [Advanced Prompt Engineering](https://github.com/Odiambo/odipie/wiki/Advanced-Prompt-Engineering-Wiki)
+- [Advanced Prompt Engineering](https://github.com/Odiambo/odipie/wiki/Advanced-Prompt-Engineering)
 - [Python Import System Documentation](https://docs.python.org/3/reference/import.html)
 - [HuggingFace Model Loading Guide](https://huggingface.co/docs/transformers/model_memory_anatomy)
