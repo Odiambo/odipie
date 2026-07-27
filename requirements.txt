@@ -1,0 +1,7 @@
+# Base editable install. Heavy AI/ML frameworks are optional extras.
+-e .
+
+# Common lightweight data/demo extras. Install heavier stacks only when needed:
+#   pip install -e .[tensorflow]
+#   pip install -e .[torch]
+#   pip install -e .[ml]
