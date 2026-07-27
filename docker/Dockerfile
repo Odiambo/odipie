@@ -8,6 +8,7 @@ WORKDIR /app
 COPY pyproject.toml README.md requirements.txt ./
 COPY odipie ./odipie
 COPY docker ./docker
+COPY ROProj ./ROProj
 COPY lazy_init_py.py app.py config.py ./
 
 RUN pip install --upgrade pip \
