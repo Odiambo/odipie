@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "odipie"
+version = "0.1.0"
+description = "Lightweight lazy-loading helpers for Python AI/ML workflows."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Odiambo" }
+]
+keywords = ["ai", "machine-learning", "lazy-loading", "mlops", "python"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+numpy = ["numpy>=1.26"]
+data = ["numpy>=1.26", "pandas>=2.2", "scikit-learn>=1.4"]
+plot = ["matplotlib>=3.8"]
+vision = ["opencv-python>=4.9"]
+torch = ["torch>=2.2"]
+tensorflow = ["tensorflow>=2.16"]
+transformers = ["transformers>=4.40"]
+ml = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "scikit-learn>=1.4",
+  "matplotlib>=3.8",
+  "transformers>=4.40",
+]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+all = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "scikit-learn>=1.4",
+  "matplotlib>=3.8",
+  "opencv-python>=4.9",
+  "torch>=2.2",
+  "tensorflow>=2.16",
+  "transformers>=4.40",
+  "pytest>=8.0",
+  "ruff>=0.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/Odiambo/odipie"
+Documentation = "https://github.com/Odiambo/odipie/wiki"
+Issues = "https://github.com/Odiambo/odipie/issues"
+
+[project.scripts]
+odipie = "odipie.__main__:main"
+
+[tool.setuptools]
+packages = ["odipie"]
+py-modules = ["lazy_init_py"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
