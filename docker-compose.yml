@@ -1,0 +1,6 @@
+services:
+  odipie:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    command: python app.py
