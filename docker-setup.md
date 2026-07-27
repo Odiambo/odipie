@@ -1,145 +1,103 @@
-# 🐳 Docker Setup for Flask-based AI Project
+# Docker Setup
 
-This guide walks through the Docker integration process for a Flask-based project. It includes a project folder overview, build and run instructions, and environment notes.
-I do not tend to use python pre-releases, so this is geared for `python 3.13.5`.
+This guide documents the Docker workflow that exists in this repository. The image installs Odipie from `pyproject.toml` and runs the lightweight smoke-check app without importing heavy optional ML frameworks.
 
-> *Security note: Never import python packages using the `*` (meaning 'import all'). Use the modules reuired for the project and that you selected during the requirements phase. If you are using the `*`, first inspect the `_init_.py` file for any aberrations or unexpected attributes.
-<br>Never run `*` inside of _init_py.*
+## Project Tree
 
----
-
-## 📂 Project Tree (Post-Dockerization)
-
-```
-ai_project/
-├── app/
+```text
+odipie/
+├── odipie/
 │   ├── __init__.py
-│   ├── routes.py
-│   ├── templates/
-│   ├── static/
-│   └── models/
-├── notebooks/
-├── data/
-├── scripts/
-├── tests/
-├── config.py
-├── requirements.txt
-├── app.py
+│   └── __main__.py
 ├── docker/
 │   ├── Dockerfile
 │   ├── .dockerignore
 │   ├── entrypoint.sh
 │   └── README.md
+├── .dockerignore
+├── app.py
+├── config.py
 ├── docker-compose.yml
-└── README.md
+├── lazy_init_py.py
+├── pyproject.toml
+└── requirements.txt
 ```
 
----
-
-## Step 1: Create the Docker Build Folder
-
-Create a `/docker` folder and add the following files:
-
-- `Dockerfile` – Defines the Flask app build process.
-- `.dockerignore` – Prevents unnecessary files from entering the image.
-- `entrypoint.sh` – Launches the app.
-- `README.md` – (Optional) Describes the Docker purpose and usage.
-
----
-
-##  Step 2: Define the Dockerfile
+## Dockerfile
 
 ```dockerfile
-FROM python:3.13
+FROM python:3.13-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y \
-    build-essential curl && \
-    rm -rf /var/lib/apt/lists/*
+COPY pyproject.toml README.md requirements.txt ./
+COPY odipie ./odipie
+COPY docker ./docker
+COPY ROProj ./ROProj
+COPY lazy_init_py.py app.py config.py ./
 
-COPY ../requirements.txt /app/
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
 
-COPY ../ /app/
+COPY docs ./docs
 
-RUN chmod +x docker/entrypoint.sh
-ENTRYPOINT ["docker/entrypoint.sh"]
-CMD ["flask", "run", "--host=0.0.0.0"]
+ENTRYPOINT ["sh", "docker/entrypoint.sh"]
+CMD ["python", "app.py"]
 ```
 
----
+## Root `.dockerignore`
 
-## Step 3: Ignore Build Clutter
-
-`.dockerignore` contents:
-
-```
-__pycache__
-*.pyc
-*.pyo
-*.pyd
-.env
-*.db
-*.sqlite3
+```text
 .git
-.vscode
+.github
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
 notebooks/
 data/
-tests/
-docker/
 ```
 
----
-
-## Step 4: Run with Docker Compose
-
-`docker-compose.yml` at project root:
+## Docker Compose
 
 ```yaml
-version: "3.9"
-
 services:
-  flaskapp:
+  odipie:
     build:
       context: .
       dockerfile: docker/Dockerfile
-    volumes:
-      - .:/app
-    ports:
-      - "5000:5000"
-    environment:
-      - FLASK_ENV=development
-      - FLASK_APP=app.py
-    command: flask run --host=0.0.0.0 --port=5000
+    command: python app.py
 ```
 
----
+## Build and Run
 
-## Build & Launch
-
-From the root project directory:
+From the repository root:
 
 ```bash
-# Build the image
-docker-compose build
-
-# Run the container
-docker-compose up
+docker compose build
+docker compose up
 ```
 
-Visit your app at: [http://localhost:5000](http://localhost:5000)
+The default container runs `python app.py`, which verifies that Odipie imports and prints optional dependency availability.
 
----
+## Optional ML Dependencies
 
-## 📌 Notes
+The base image installs `-e .` from `requirements.txt`. To bake in a heavier stack, update `requirements.txt` before building:
 
-- `PYTHONDONTWRITEBYTECODE=1`: Prevents `.pyc` files for a cleaner container.
-- `PYTHONUNBUFFERED=1`: Ensures real-time logging to stdout/stderr.
-- You can later swap Flask’s development server with your choice for production.
-- Entry points, security, and project buildouts are still under works.
+```text
+-e .[data]
+# or
+-e .[tensorflow]
+# or
+-e .[torch]
+```
 
----
+Keep optional AI/ML dependencies explicit so the lazy-loading workflow does not turn into an oversized default install.

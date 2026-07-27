@@ -1,0 +1,6 @@
+services:
+  roproj:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: python ROProj/app.py

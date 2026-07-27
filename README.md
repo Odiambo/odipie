@@ -1,171 +1,138 @@
 <div align="center">
 
-# 🥧 Odipie
-### *Fast AI/ML Workflows Through Intelligent Lazy Loading*
+# Odipie
+### Fast AI/ML Workflows Through Intelligent Lazy Loading
 
-[![Python Version](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/Odiambo/odipie?style=social)](https://github.com/Odiambo/odipie/stargazers)
-[![Forks](https://img.shields.io/github/forks/Odiambo/odipie?style=social)](https://github.com/Odiambo/odipie/network/members)
-[![Issues](https://img.shields.io/github/issues/Odiambo/odipie)](https://github.com/Odiambo/odipie/issues)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Odiambo/odipie/pulls)
 [![Template](https://img.shields.io/badge/repo-template-blueviolet)](https://github.com/Odiambo/odipie/generate)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-<img src="https://raw.githubusercontent.com/Odiambo/odipie/chef/assets/odipie-demo.gif" width="600" alt="Odipie Demo"/>
 
-**Reduce ML startup time by 70% • Cut memory usage by 50% • Zero code changes required**
+Reduce startup cost by loading heavy AI/ML libraries only when a code path actually uses them.
+
 </div>
-This is a Python toolkit designed to optimize AI/ML workflows by leveraging learned and discovered techniques for heavy dependencies. This repository works as a resource for building efficient, modular, and scalable AI/ML applications, with a focus on fast startup times, reduced memory usage, and integration suggestions.
 
-<br>Input is welcomed and greatly encouraged.
-
+Odipie is a lightweight Python toolkit and project template for lazy-loading optional AI/ML dependencies. The base install stays small. Frameworks such as TensorFlow, PyTorch, scikit-learn, Transformers, Pandas, NumPy, Matplotlib, and OpenCV can be installed as optional extras.
 
 ## Features
 
-- **Advance Prompt Guide:**</br>
-  Prompt simplified look at advanced propmting with context promting approaches. API and interface propmting are adressesed. 
-  It is important to understand the model you are using, its ability to parse data, properly interpret context, and map chains of thought and actions.
-  **[📖 Read the Guide](adv_promptGuide.md)**
+- Lazy proxy objects for common AI/ML libraries.
+- Optional dependency extras instead of one oversized required install.
+- Compatibility shim for older examples that use `import lazy_init_py as odipie`.
+- Small CLI and smoke-check app for verifying the package install.
+- Docker and Compose workflow that builds from the real repository tree.
+- Wiki source files under `docs/wiki-src/` for longer engineering notes.
 
+## Project Tree
 
-- **Lazy Loading of Heavy Libraries:**  
-  Efficiency in loading AI/ML libraries (e.g., TensorFlow, PyTorch, scikit-learn, Transformers, NumPy, Pandas, Matplotlib, OpenCV) only when they are actually used, minimizing startup time and memory footprint.
-
-- **File Structure:**</br>
-  Project file tree for learns to keep things organized:
-```  
-  ai_project/
-├── app/
+```text
+odipie/
+├── odipie/
 │   ├── __init__.py
-│   ├── routes.py
-│   ├── templates/
-│   ├── static/
-│   └── models/
-├── notebooks/
-├── data/
-├── scripts/
-├── tests/
-├── config.py
-├── requirements.txt
-├── app.py
+│   └── __main__.py
+├── ROProj/
+│   ├── README.md
+│   ├── app.py
+│   ├── config.py
+│   ├── docker-compose.yml
+│   └── requirements.txt
 ├── docker/
 │   ├── Dockerfile
 │   ├── .dockerignore
 │   ├── entrypoint.sh
 │   └── README.md
+├── docs/
+│   └── wiki-src/
+├── tests/
+│   └── test_imports.py
+├── .dockerignore
+├── app.py
+├── config.py
 ├── docker-compose.yml
+├── lazy_init_py.py
+├── pyproject.toml
+├── requirements.txt
 └── README.md
 ```
-- **Transparent API:**  
-  Access libraries and utility functions as if they were eagerly imported, with no change to your code’s interface.
 
-- **Utility Functions:**  
-  Includes lazy-loaded helpers for model loading, data preprocessing, and model training.
+## Installation
 
-- **Debugging & Development Tools:**  
-  Easily inspect which modules have been loaded and force-load all dependencies for testing or warm-up.
+Create and activate a virtual environment, then install the package in editable mode:
 
-- **Clear Error Handling:**  
-  User-friendly messages when optional dependencies are missing.
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -e .
+```
 
-- **Docker Integration Guide:**  
-  Step-by-step instructions for containerizing your AI/ML application using Docker and Docker Compose.
+Install optional stacks only when you need them:
 
-- **MCP Use and Set Up:**</br>
-  >TBA
-
-
+```bash
+pip install -e .[data]
+pip install -e .[tensorflow]
+pip install -e .[torch]
+pip install -e .[ml]
+```
 
 ## Usage
 
-### 1. Lazy Loading in Your Project
+```python
+import odipie
 
-Import libraries and functions from `lazy_init_py.py` as you would from a normal package:
+print("App ready")
+print(odipie.get_loaded_modules())
+
+# TensorFlow imports only when this attribute chain is used.
+model = odipie.tensorflow.keras.Sequential([...])
+
+# scikit-learn imports only when this code path runs.
+processed = odipie.preprocess_data(data, method="standard")
+```
+
+Older examples still work:
 
 ```python
 import lazy_init_py as odipie
-
-# Fast startup!
-print("App ready!")
-
-# Libraries load only when accessed:
-model = odipie.tensorflow.keras.Sequential([...])  # TensorFlow loads here
-rf = odipie.sklearn.ensemble.RandomForestClassifier()  # scikit-learn loads here
-
-# Utility functions (also lazy):
-loaded_model = odipie.load_model('model.h5')  # Loads TensorFlow only if needed
-processed = odipie.preprocess_data(data)
-trained = odipie.train_model(X, y)
 ```
 
-### 2. Inspect and Control Lazy Loading
+## CLI Smoke Checks
 
-```python
-# See which modules have been loaded so far
-print(odipie.get_loaded_modules())
-
-# Force-load all lazy modules (useful for testing)
-odipie.force_load_all()
+```bash
+python -m odipie --loaded
+python -m odipie --versions
+python app.py
 ```
 
----
+## Tests
+
+```bash
+pip install -e .[dev]
+pytest
+```
+
+## Docker
+
+```bash
+docker compose build
+docker compose up
+```
+
+See [docker-setup.md](docker-setup.md) for the Docker walkthrough.
 
 ## Documentation
 
 | Resource | Description | Link |
 |----------|-------------|------|
-| **📘 Wiki Home** | Complete knowledge base | [🔗 Wiki](https://github.com/Odiambo/odipie/wiki) |
-| **🎓 Tutorials** | Step-by-step guides | [🔗 Tutorials](https://github.com/Odiambo/odipie/wiki/Tutorials) |
-| **📚 API Reference** | Full API documentation | [🔗 API Docs](https://github.com/Odiambo/odipie/wiki/API-Reference) |
-| **🐳 Docker Guide** | Step-by-step guide for Dockerizing a Flask-based AI/ML project, including best practices for Python environments | [🔗 Docker Setup](docker-setup.md) |
-| **🧠 Lazy Loading Deep Dive** | omprehensive explanation of lazy loading, its benefits for AI/ML, and technical implementation details | [🔗 Guide](Guide_LzyL-AI.md) |
-| **💬 Prompt Engineering** | Advanced AI prompting | [🔗 Prompt Guide](adv_promptGuide.md) |
-| **🏗️ Project Structure** | Best practices for ML projects | [🔗 Structure Guide](https://github.com/Odiambo/odipie/wiki/Project-Structure) |
----
-
-## 🐳 Docker Support
-
-See [docker-setup.md](docker-setup.md) for a full walkthrough on building and running your AI/ML app in Docker, including sample `Dockerfile`, `.dockerignore`, and `docker-compose.yml` configurations.
-
----
-
-## 📄 License
-
-This project is licensed under the [Apache License 2.0](LICENSE).
-
----
-
-## 🤝 Contributing
-
-
-We love contributors! 💖
-
-### Ways to Contribute:
-- 🐛 **Report bugs** via [Issues](https://github.com/Odiambo/odipie/issues)
-- 💡 **Suggest features** in [Discussions](https://github.com/Odiambo/odipie/discussions)
-- 📝 **Improve documentation** (especially Wiki!)
-- 🧪 **Add examples** for your favorite frameworks
-- 🎨 **Enhance code quality** with PRs
-
-**[📖 Contribution Guidelines](CONTRIBUTING.md)** 
-
-
----
+| Wiki Home | Complete knowledge base | [Wiki](https://github.com/Odiambo/odipie/wiki) |
+| Docker Guide | Build and run the package in Docker | [docker-setup.md](docker-setup.md) |
+| Lazy Loading Deep Dive | Lazy-loading concepts and implementation notes | [docs/wiki-src/Guide_LzyL-AI.md](docs/wiki-src/Guide_LzyL-AI.md) |
+| Prompt Engineering | Prompt ideation and context engineering | [adv_promptGuide.md](adv_promptGuide.md) |
+| Wiki Sources | Source markdown for wiki pages | [docs/wiki-src](docs/wiki-src) |
 
 ## Security Note
 
-Never use `import *` in your code or in `__init__.py` files. Always explicitly import only the modules you need. See [docker-setup.md](docker-setup.md) for more security best practices.
+Do not use wildcard imports in project code. For PyTorch model files, only load artifacts from trusted sources; Odipie uses safer `torch.load(..., weights_only=True)` defaults when supported by the installed PyTorch version.
 
----
-<div align="center">
-<h2>Contact</h2>
-For questions or suggestions, please open an issue in this repository.
-div align="center">
+## License
 
-**[⬆ Back to Top](#-odipie)**
-
-Made with ❤️ by [Odiambo](https://github.com/Odiambo)
-
-If Odipie saved you time, consider giving it a ⭐!
-
-</div>
+This project is licensed under the [Apache License 2.0](LICENSE).

@@ -1,0 +1,2 @@
+# When ROProj lives inside this repository, install the parent package.
+-e ..
