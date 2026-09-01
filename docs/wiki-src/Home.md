@@ -1,101 +1,65 @@
 # Odipie Wiki
 
-Welcome to the Odipie engineering wiki. Odipie is a lightweight Python toolkit and template for building AI/ML workflows that keep startup fast by lazy-loading optional dependencies only when a feature needs them.
+Odipie is a lightweight Python toolkit and project template for AI/ML work that can defer optional, heavy imports until a feature uses them. This wiki covers the runnable repository and the practical AI concepts needed to use agentic tools responsibly.
 
-The current runnable workflow is intentionally small:
+## Who this wiki is for
 
-- `pyproject.toml` defines the installable `odipie` package.
-- `requirements.txt` installs the base package in editable mode.
-- Optional extras install heavier AI/ML stacks only when needed.
-- `app.py` and `python -m odipie` provide smoke checks.
-- `docker/Dockerfile` and `docker-compose.yml` build from the real package skeleton.
-- `ROProj/` is a starter scaffold for experiments.
+- Python developers trying the Odipie lazy-loading package.
+- AI/ML practitioners who want a small, inspectable project skeleton.
+- New agentic-tool users who need precise definitions without marketing shorthand.
+- Teams designing tool-using or multi-agent workflows with explicit safety boundaries.
 
-## Quick Start
+## Choose a reading path
 
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -e .
-python -m odipie --loaded
-python -m odipie --versions
-python app.py
-```
+### I want to run Odipie
 
-Install optional dependencies only for the workflows you use:
+1. [Getting Started](Getting-Started)
+2. [Prompt and Context Guide](Prompt-and-Context-Guide)
+3. [Automatic Prompt Engineering](Automatic-Prompt-Engineering)
 
-```bash
-pip install -e .[data]
-pip install -e .[tensorflow]
-pip install -e .[torch]
-pip install -e .[ml]
-```
+### I want to understand modern AI systems
 
-## Docker Workflow
+1. [AI Terminology and FAQ](AI-Terminology-and-FAQ)
+2. [Agents, MCP, and Orchestration](Agents-MCP-and-Orchestration)
+3. [AI Claims and Misconceptions](AI-Claims-and-Misconceptions)
+4. [AI Bias Recognition & Mitigation](AI-Bias-Recognition-&-Mitigation)
 
-```bash
-docker compose build
-docker compose up
-```
-
-The default container runs `python app.py`. That command verifies the package install and reports optional dependency availability without importing heavy frameworks.
-
-## Project Structure
+## Repository at a glance
 
 ```text
 odipie/
-├── odipie/
-│   ├── __init__.py
-│   └── __main__.py
-├── ROProj/
-├── docker/
-├── docs/wiki-src/
-├── tests/
-├── app.py
+├── odipie/                 # Installable package
+├── ROProj/                 # Small starter scaffold
+├── docker/                 # Container files
+├── docs/wiki-src/          # Source of truth for this wiki
+├── tests/                  # Import smoke tests
+├── app.py                  # Local/container smoke check
 ├── docker-compose.yml
-├── lazy_init_py.py
+├── lazy_init_py.py         # Compatibility import surface
 ├── pyproject.toml
 └── requirements.txt
 ```
 
-## Model-Context-Protocol Overview
+The package exposes lazy proxies for optional libraries. Importing Odipie does not prove that every optional framework is installed, compatible, or usable. Accessing an optional dependency is the point at which its import can occur and fail.
 
-Odipie uses Model-Context-Protocol as an organizing pattern for AI development:
+## What Odipie does—and does not do
 
-- **Model**: The LLM, local model, or ML framework behind an interface.
-- **Context**: The runtime inputs, prompt templates, settings, source material, and session metadata needed for a task.
-- **Protocol**: The validation, parsing, retry, logging, and tool-use rules that govern how models and context interact.
+Odipie can reduce initial import work in applications that expose several optional AI/ML stacks. The actual benefit depends on the Python version, platform, installed libraries, import path, and workload. Measure startup time and memory in your environment before making a performance claim.
 
-This separation keeps AI workflows easier to test, document, and evolve.
+Odipie is not a model, an agent framework, an MCP implementation, or a substitute for dependency, security, and model evaluation. The educational agent material in this wiki is guidance for system design.
 
-## Engineering Practices
+## Documentation principles
 
-- [Context Engineering and Modern Prompting Strategies](Context-Engineering-and-Modern-Prompting-Strategies)
-- [Inference Engineering](Inference-Engineering)
-- [Prompt Design Patterns](Prompt-Design-Patterns)
-- [Agent Architecture](Agent-Architecture)
-- [Retrieval-Augmented Generation](Retrieval-Augmented-Generation)
-- [Evaluation and Observability](Evaluation-and-Observability)
-- [AI Security and Prompt Injection](AI-Security-and-Prompt-Injection)
+- Prefer runnable examples over implied guarantees.
+- Distinguish a base model from the software system around it.
+- Use deterministic code for calculations, validation, policy enforcement, and irreversible actions where practical.
+- Give agents the minimum tools and permissions required for a task.
+- Evaluate outputs against explicit acceptance criteria.
 
-## Software Engineering
+## Project links
 
-- [Development Standards](Development-Standards)
+- [Public repository](https://github.com/Odiambo/odipie)
+- [Issue tracker](https://github.com/Odiambo/odipie/issues)
+- [Apache License 2.0](https://github.com/Odiambo/odipie/blob/chef/LICENSE)
 
-## Architecture
-
-- [System Architecture](System-Architecture)
-- [Data Architecture](Data-Architecture)
-
-## Projects
-
-- [Project Overview](Project-Overview)
-- [Roadmap](Roadmap)
-- [Research and Experiments](Research-and-Experiments)
-
-## Next Documentation Work
-
-1. Add a package/API reference for `odipie.__getattr__`, `LazyLoader`, `load_model`, `preprocess_data`, `train_model`, `check_versions`, and `force_load_all`.
-2. Add benchmark scripts and publish reproducible startup/memory numbers.
-3. Add dependency support notes for Python versions and optional extras.
-4. Add security notes for model loading, prompt injection, and dependency supply chain handling.
+Continue with [Getting Started](Getting-Started) or begin with [AI Terminology and FAQ](AI-Terminology-and-FAQ).

@@ -124,8 +124,10 @@ See [docker-setup.md](docker-setup.md) for the Docker walkthrough.
 | Resource | Description | Link |
 |----------|-------------|------|
 | Wiki Home | Complete knowledge base | [Wiki](https://github.com/Odiambo/odipie/wiki) |
+| Getting Started | Install, optional extras, Docker, and troubleshooting | [docs/wiki-src/Getting-Started.md](docs/wiki-src/Getting-Started.md) |
 | Docker Guide | Build and run the package in Docker | [docker-setup.md](docker-setup.md) |
-| Lazy Loading Deep Dive | Lazy-loading concepts and implementation notes | [docs/wiki-src/Guide_LzyL-AI.md](docs/wiki-src/Guide_LzyL-AI.md) |
+| AI Terminology & FAQ | Plain-language AI and agentic-system reference | [docs/wiki-src/AI-Terminology-and-FAQ.md](docs/wiki-src/AI-Terminology-and-FAQ.md) |
+| Agents, MCP & Orchestration | Agents, graph workflows, MCP, and WebMCP | [docs/wiki-src/Agents-MCP-and-Orchestration.md](docs/wiki-src/Agents-MCP-and-Orchestration.md) |
 | Prompt Engineering | Prompt ideation and context engineering | [adv_promptGuide.md](adv_promptGuide.md) |
 | Wiki Sources | Source markdown for wiki pages | [docs/wiki-src](docs/wiki-src) |
 
